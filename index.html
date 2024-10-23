@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="title">GTA: San Andreas Speedrun Leaderboard</title>
+  <title id="title"></title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1 id="title">GTA: San Andreas Speedrun Leaderboard</h1>
+  <h1 id="title"></h1>
   <table id="leaderboard">
     <thead>
       <tr>
-        <th>#</th>
-        <th id="player-header">Player</th>
-        <th id="time-header">Time</th>
-        <th id="date-header">Date</th>
+        <th id="position-header"></th>
+        <th id="player-header"></th>
+        <th id="time-header"></th>
+        <th id="date-header"></th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
-  <script src="script.js"></script>
+  <script type="module">
+    import { fetchLeaderboard } from './scripts/leaderboard.js';
+    import { loadLang } from './scripts/lang.js';
+
+    loadLang();
+    fetchLeaderboard();
+  </script>
 </body>
 </html>
